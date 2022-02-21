@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem;
+  margin-left: 5%; }
+
+b {
+  color: orange; }
+
+.btn {
+  text-decoration: none;
+  color: white;
+  background-color: orange;
+  padding: 2% 5%;
+  border-radius: 2px;
+  width: 20rem; }
+
+.header {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  height: 100vh;
+  color: white; }
+  .header__right {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../img/hero.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    align-items: center;
+    justify-content: center;
+    padding: 10%; }
+    .header__right img {
+      width: 20%;
+      text-align: center; }
+    .header__right--title {
+      display: grid;
+      grid-template-columns: auto;
+      gap: 5%; }
+      .header__right--title a {
+        margin-top: 3%; }
+      .header__right--title-logos {
+        display: flex;
+        gap: 5%;
+        margin-top: 10%; }
+  .header__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5%;
+    background-color: #00000f; }
+    .header__left--realtor {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5%; }
+      .header__left--realtor img {
+        width: 25%;
+        border-radius: 50%; }
+      .header__left--realtor-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem; }
+        .header__left--realtor-text p {
+          font-size: 1rem; }
+
+.about {
+  display: grid;
+  grid-template-columns: 25% 25% 25%;
+  grid-template-rows: auto auto;
+  gap: 15%;
+  padding: 10%;
+  align-items: center;
+  justify-content: center; }
+  .about__child {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    line-height: 1.5; }
+
+.customers {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 7% 0; }
+  .customers__left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .customers__left img {
+      position: absolute; }
+    .customers__left--img1 {
+      width: 100%; }
+    .customers__left--img2 {
+      width: 60%; }
+    .customers__left--img3 {
+      width: 50%;
+      top: 40%;
+      right: -5%; }
+  .customers__right {
+    padding: 15%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5%;
+    line-height: 1.7;
+    background-color: #f0f0f0; }
+
+.cards {
+  padding: 10%;
+  display: grid;
+  grid-template-columns: 25% 25% 25%;
+  gap: 5%;
+  align-items: center;
+  justify-content: center; }
+  .cards__child {
+    display: flex;
+    flex-direction: column;
+    text-align: center; }
+    .cards__child--title {
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 3%;
+      width: 80%;
+      align-self: center;
+      margin-top: -7%; }
+    .cards__child--text {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2rem;
+      padding: 10% 5%;
+      background-color: #f0f0f0; }
+    .cards__child a {
+      width: 100%;
+      padding: 4% 0; }
