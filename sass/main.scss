@@ -1,3 +1,21 @@
+@mixin land {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin port {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin mob {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,10 +23,15 @@
 }
 html {
   font-size: 62.5%;
+
+  @include port {
+    font-size: 55%;
+  }
 }
 body {
   font-size: 1.6rem;
-  margin-left: 5%;
+
+  // margin-left: 5%;
 }
 
 b {
@@ -21,13 +44,43 @@ b {
   padding: 2% 5%;
   border-radius: 2px;
   width: 20rem;
+  text-align: center;
+}
+
+.navigation {
+  background-color: rgba(255, 166, 0, 0.719);
+  position: fixed;
+  width: 100vw;
+  padding: 1%;
+  z-index: 100;
+
+  i {
+    font-size: 3rem;
+    color: white;
+    margin-left: 94%;
+    cursor: pointer;
+
+    @include mob {
+      margin-left: 90%;
+    }
+  }
 }
 
 .header {
   display: grid;
-  grid-template-columns: 2.5fr 1fr;
+  grid-template-columns: 3fr 1fr;
   height: 100vh;
   color: white;
+
+  @include port {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2.5fr 1fr;
+    height: auto;
+  }
+
+  @include mob {
+    grid-template-rows: 1.2fr 1fr;
+  }
 
   &__right {
     // height: 80vh;
@@ -42,9 +95,17 @@ b {
     justify-content: center;
     padding: 10%;
 
+    @include mob {
+      height: 90vh;
+    }
+
     img {
       width: 20%;
       text-align: center;
+
+      @include mob {
+        margin-bottom: 20%;
+      }
     }
 
     &--title {
@@ -60,6 +121,13 @@ b {
         display: flex;
         gap: 5%;
         margin-top: 10%;
+
+        @include port {
+          img {
+            width: 15%;
+            margin-top: 20%;
+          }
+        }
       }
     }
   }
@@ -72,6 +140,26 @@ b {
     flex-direction: column;
     gap: 5%;
     background-color: rgb(0, 0, 15);
+
+    @include port {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 30% 30%;
+
+      b {
+        text-align: center;
+        grid-column: 1/4;
+        // margin-bottom: -15%;
+      }
+    }
+
+    @include mob {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      height: auto;
+      padding: 10%;
+    }
 
     &--realtor {
       display: flex;
@@ -106,6 +194,15 @@ b {
   align-items: center;
   justify-content: center;
 
+  @include port {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mob {
+    grid-template-columns: 1fr;
+    gap: 5%;
+  }
+
   &__child {
     display: flex;
     flex-direction: column;
@@ -119,11 +216,26 @@ b {
   grid-template-columns: 50% 50%;
   margin: 5% 0;
 
+  @include port {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 20%;
+  }
+
+  @include mob {
+    margin-top: 50%;
+  }
+
   &__left {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include port {
+      order: 2;
+      margin: 0;
+    }
 
     img {
       position: absolute;
@@ -151,6 +263,14 @@ b {
     gap: 5%;
     line-height: 1.7;
     background-color: #f0f0f0;
+
+    @include port {
+      padding: 5% 5% 20% 5%;
+
+      .btn {
+        padding: 1% 2%;
+      }
+    }
   }
 }
 
@@ -161,6 +281,16 @@ b {
   gap: 5%;
   align-items: center;
   justify-content: center;
+
+  @include port {
+    grid-template-columns: 50% 50%;
+    margin-bottom: 15%;
+  }
+
+  @include mob {
+    grid-template-columns: 100%;
+    gap: 2%;
+  }
 
   &__child {
     display: flex;
@@ -202,6 +332,10 @@ b {
   gap: 3%;
   width: 100%;
   height: 100vh;
+
+  @include mob {
+    margin-top: 70%;
+  }
 
   img {
     width: 100%;
@@ -279,9 +413,30 @@ footer {
     line-height: 1.3;
     padding: 5% 0;
     text-transform: uppercase;
+
+    @include port {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20%;
+      // row-gap: 30%;
+      align-items: start;
+    }
+
+    @include mob {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
   p {
     color: #888;
     line-height: 2;
+
+    @include mob {
+      margin-top: 15%;
+    }
   }
 }
